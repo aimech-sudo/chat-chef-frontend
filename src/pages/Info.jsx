@@ -32,7 +32,15 @@ const Info = ({ sendIngredientList }) => {
 
   const handleNext = () => {
     console.log("chat페이지로 이동");
-    history("/chat");
+    //입력 값이 있는 배열
+    const filterDataList = ingredientList.filter();
+    if (filterDataList.length) {
+      // 재료 입력값이 있는 경우
+      sendIngredientList(ingredientList);
+      history("/chat");
+      return;  
+    }
+    
   };
 
   const handleRemove = (selectedId) => {
