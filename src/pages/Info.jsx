@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import PrevButton from "../components/PrevButton";
 import InfoInput from "../components/InfoInput";
 import AddButton from "../components/AddButton";
@@ -31,9 +31,9 @@ const Info = ({ sendIngredientList }) => {
   };
 
   const handleNext = () => {
-    console.log("chat페이지로 이동");
+    // console.log("chat페이지로 이동");
     //입력 값이 있는 배열
-    const filterDataList = ingredientList.filter();
+    const filterDataList = ingredientList.filter((item) => item.value.trim() !== "");
     if (filterDataList.length) {
       // 재료 입력값이 있는 경우
       sendIngredientList(ingredientList);
@@ -44,7 +44,7 @@ const Info = ({ sendIngredientList }) => {
   };
 
   const handleRemove = (selectedId) => {
-    console.log("🚀 ~ selectedId:", selectedId);
+    // console.log("🚀 ~ selectedId:", selectedId);
 
     // 사용자가 클릭한 요소를 제외한 모든 요소들의 배열
     const filterIngredientList = ingredientList.filter(
@@ -68,10 +68,10 @@ const Info = ({ sendIngredientList }) => {
     event.preventDefault();
   };
 
-  // state 변경 일어나면 실행
-  useEffect(() => {
-    console.log("🚀 ~ Info ~ ingredientList:", ingredientList);
-  }, [ingredientList]);
+  // // state 변경 일어나면 실행
+  // useEffect(() => {
+  //   console.log("🚀 ~ Info ~ ingredientList:", ingredientList);
+  // }, [ingredientList]);
 
   // view
   return (

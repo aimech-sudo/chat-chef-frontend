@@ -7,7 +7,7 @@ const Home = () => {
   const history = useNavigate();
 
   const handleStart = () => {
-    console.log("info페이지로 이동");
+    // console.log("info페이지로 이동");
     // react-router-dom을 이용한 페이지 이동
     history("/info")
   };

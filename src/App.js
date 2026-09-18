@@ -13,17 +13,7 @@ function App() {
     <Routes>
       <Route path="/" element={<Home />} />
       <Route path="/info" element={<Info sendIngredientList={(data) => setIngredientList(data)}/>} />
-      <Route path="/chat" element=
-        {<Chat ingredientList=
-          {
-            (data) => {
-              console.log("🚀 ~ App ~ data:", data)
-              ingredientList(data)
-            }
-          } 
-        />
-        }
-      />
+      <Route path="/chat" element={<Chat ingredientList={ingredientList}/>} />
     </Routes>
   );
 }
